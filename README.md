@@ -23,7 +23,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 # install ansible-galaxy dependencies
-ansible-galaxy install -r requirements.txt
+ansible-galaxy install -r requirements.yaml
 ```
 
 #### Bootstrap testbed
