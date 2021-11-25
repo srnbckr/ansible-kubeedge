@@ -1,0 +1,7 @@
+### Ansible ###
+*.retry
+
+./fetched/*
+.google-cred.json
+gcp-key
+.venv/
