@@ -143,13 +143,15 @@
   roles:
     - keadm
   vars:
-    keadm_version: v1.8.2
+    keadm_version: 1.8.1
 
 - name: Run keadm --init on k8s master node
   hosts: k3s-master
   become: yes
   roles:
     - cloudcore
+  vars: 
+    kubeedge_version: 1.8.1
 
 - name: Run keadm --join on edge nodes
   hosts: edge_nodes

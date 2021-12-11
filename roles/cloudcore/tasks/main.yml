@@ -8,7 +8,7 @@
 
 - name: Run keadm init
   command:
-    cmd: keadm init --advertise-address="{{ ansible_host }}" --kube-config="/home/{{ ansible_user }}/.kube/config"
+    cmd: keadm init --advertise-address="{{ ansible_host }}" --kube-config="/home/{{ ansible_user }}/.kube/config" --kubeedge-version {{ kubeedge_version}}
     creates: /etc/kubeedge
 
 - name: Create cloudcore.yaml config
