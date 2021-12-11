@@ -28,7 +28,7 @@ spec:
           containers:
             - image: kubeedge/sedna-example-federated-learning-surface-defect-detection-train:v0.3.0
               name:  train-worker
-              imagePullPolicy: IfNotPresent
+              imagePullPolicy: Always
               env:  # user defined environments
                 - name: "batch_size"
                   value: "32"
@@ -39,6 +39,10 @@ spec:
               resources:  # user defined resources
                 limits:
                   memory: 2Gi
+          dnsPolicy: "None"
+          dnsConfig:
+            nameservers:
+              - 169.254.96.16
     - dataset:
         name: "edge2-surface-defect-detection-dataset"
       template:
@@ -47,7 +51,7 @@ spec:
           containers:
             - image: kubeedge/sedna-example-federated-learning-surface-defect-detection-train:v0.3.0
               name:  train-worker
-              imagePullPolicy: IfNotPresent
+              imagePullPolicy: Always
               env:  # user defined environments
                 - name: "batch_size"
                   value: "32"
@@ -58,3 +62,7 @@ spec:
               resources:  # user defined resources
                 limits:
                   memory: 2Gi
+          dnsPolicy: "None"
+          dnsConfig:
+            nameservers:
+              - 169.254.96.16
