@@ -154,7 +154,7 @@
     kubeedge_version: 1.8.1
 
 - name: Run keadm --join on edge nodes
-  hosts: edge_nodes
+  hosts: edge-nodes
   become: yes
   vars:
     cloudcore_ip: "{{ hostvars['k3s-master']['ansible_host'] }}"
@@ -191,7 +191,7 @@
         enabled: yes
 
 - name: Restart edgecore
-  hosts: edge_nodes
+  hosts: edge-nodes
   become: yes
   tasks:
     - name: Restart edgecore service
